@@ -1,11 +1,15 @@
 <script setup>
+import { ref } from 'vue'
 import { useCounterStore } from '@/stores/counter'
 const useStore = useCounterStore()
 // 清空收藏
 const clearStar = () => {
+  // Pinia清空数据
   useStore.clearStar()
+  // 渲染空状态
+  isHave.value = false
 }
-const isHave = useStore.WeatherArr.length > 0
+let isHave = ref(useStore.WeatherArr.length > 0)
 
 const goBaidu = (pName) => {
   location.href = `https://www.baidu.com/s?wd=${pName}`
