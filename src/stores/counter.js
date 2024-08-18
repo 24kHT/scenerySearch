@@ -4,6 +4,11 @@ import { defineStore } from 'pinia'
 export const useCounterStore = defineStore(
   'counterStore',
   () => {
+    let isShow = ref(true)
+
+    const setShow = () => {
+      isShow.value = false
+    }
     const WeatherArr = ref([])
     // 添加天气收藏
     const setWeather = (obj) => {
@@ -20,7 +25,7 @@ export const useCounterStore = defineStore(
       WeatherArr.value = []
     }
 
-    return { WeatherArr, setWeather, logA, clearStar }
+    return { setShow, WeatherArr, setWeather, logA, clearStar, isShow }
   },
   {
     persist: true

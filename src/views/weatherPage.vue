@@ -5,6 +5,7 @@ import { ref } from 'vue'
 import { getWeatherService } from '@/api/weather'
 import WeatherCard from '@/components/WeatherCard.vue'
 import router from '@/router'
+import { useCounterStore } from '@/stores/counter'
 
 // 获取天气图标
 const getIcon = (w) => {
@@ -66,12 +67,26 @@ const getWeather = async () => {
 }
 getWeather()
 
+const useStore = useCounterStore()
 // 跳转收藏页
 const goStar = () => {
   router.push('/star')
 }
 
 const show = ref(true)
+if (localStorage.getItem('counterStore')) {
+  // 如果存在，调用处理函数
+  console.log(1)
+  show.value = false
+} else {
+  console.log(2)
+  show.value = true
+}
+const handleConfirm = () => {
+  // console.log(1)
+  console.log(useStore.isShow)
+  useStore.setShow()
+}
 </script>
 <template>
   <van-icon class="icon" name="star-o" @click="goStar" />
@@ -85,8 +100,9 @@ const show = ref(true)
   <van-dialog
     v-model:show="show"
     title="新增收藏功能，可以把喜欢的景点放在收藏夹里~"
-    confirmButtonText="确定"
+    confirmButtonText="不再提醒"
     show-cancel-button
+    @confirm="handleConfirm"
   >
   </van-dialog>
 </template>
