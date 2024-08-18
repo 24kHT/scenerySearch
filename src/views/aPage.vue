@@ -5,16 +5,25 @@ const useStore = useCounterStore()
 const clearStar = () => {
   useStore.clearStar()
 }
+const isHave = useStore.WeatherArr.length > 0
 </script>
 <template>
-  <div class="wrapper" v-for="item in useStore.WeatherArr" :key="item">
-    <div class="card">
-      <div class="card-content">
-        <h2 class="card-title">{{ item.pName }}</h2>
-        <img :src="item.starImg" alt="" />
-        <button class="card-button">了解更多</button>
+  <div class="showPage" v-if="isHave">
+    <div class="wrapper" v-for="item in useStore.WeatherArr" :key="item">
+      <div class="card">
+        <div class="card-content">
+          <h2 class="card-title">{{ item.pName }}</h2>
+          <img :src="item.starImg" alt="" />
+          <button class="card-button">了解更多</button>
+        </div>
       </div>
     </div>
+  </div>
+  <div v-else>
+    <img
+      src="http://hbimg.huaban.com/8f2d3b93cb95bdc92d5c96ac8d1befb33f6c009bc5a5-4ATNGY"
+      alt=""
+    />
   </div>
   <van-icon class="icon" name="delete-o" @click="clearStar" />
 </template>

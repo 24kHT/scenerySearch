@@ -70,6 +70,8 @@ getWeather()
 const goStar = () => {
   router.push('/star')
 }
+
+const show = ref(true)
 </script>
 <template>
   <van-icon class="icon" name="star-o" @click="goStar" />
@@ -80,6 +82,13 @@ const goStar = () => {
       :key="index"
     />
   </div>
+  <van-dialog
+    v-model:show="show"
+    title="新增收藏功能，可以把喜欢的景点放在收藏夹里~"
+    confirmButtonText="确定"
+    show-cancel-button
+  >
+  </van-dialog>
 </template>
 
 <style lang="scss" scoped>
