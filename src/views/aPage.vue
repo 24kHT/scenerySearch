@@ -8,7 +8,7 @@ const clearStar = () => {
 const isHave = useStore.WeatherArr.length > 0
 
 const goBaidu = (pName) => {
-  window.open(`https://www.baidu.com/s?wd=${pName}`)
+  location.href = `https://www.baidu.com/s?wd=${pName}`
 }
 </script>
 <template>

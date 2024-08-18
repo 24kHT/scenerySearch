@@ -45,7 +45,7 @@ const dance = () => {
     nextTick(() => {
       document.querySelector('.isRain').style.bottom = '0px'
       document.querySelector('.xh').style.right = '500px'
-      document.querySelector('.title-wrap ').style.top = '-150px'
+      document.querySelector('.title-wrap ').style.top = '-200px'
     })
   } else {
     nextTick(() => {
