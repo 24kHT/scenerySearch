@@ -28,7 +28,7 @@ const getIcon = (w) => {
   } else if (w === '中到大雨') {
     return 'http://gd-hbimg.huaban.com/5f43e87c03712b3acac273a2ae5c04e5ab6097f01d8934-6pf9pF'
   }
-  return 'https://img.icons8.com/color/96/000000/sun.png'
+  return 'http://gd-hbimg.huaban.com/c29b18c89f635960641e53e96a51dcc008313ea5248534-CMIw2t_fw480'
 }
 
 // 获取风力信息

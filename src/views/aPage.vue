@@ -6,6 +6,10 @@ const clearStar = () => {
   useStore.clearStar()
 }
 const isHave = useStore.WeatherArr.length > 0
+
+const goBaidu = (pName) => {
+  window.open(`https://www.baidu.com/s?wd=${pName}`)
+}
 </script>
 <template>
   <div class="showPage" v-if="isHave">
@@ -14,7 +18,9 @@ const isHave = useStore.WeatherArr.length > 0
         <div class="card-content">
           <h2 class="card-title">{{ item.pName }}</h2>
           <img :src="item.starImg" alt="" />
-          <button class="card-button">了解更多</button>
+          <button class="card-button" @click="goBaidu(item.pName)">
+            了解更多
+          </button>
         </div>
       </div>
     </div>
