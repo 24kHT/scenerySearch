@@ -36,12 +36,15 @@ scenerySearch 是一个功能丰富的前端项目，结合了 **Element Plus**�
 
 ## 项目预览
  **首页**
+ </br>
 ![示例图片](https://pic1.zhimg.com/100/v2-89810c85f6afd91d60755bc117f3fbb4_r.jpg)
-</br>
+
  **推荐景点**
+ </br>
 ![示例图片](https://pic2.zhimg.com/100/v2-ec1388e796227bc4923280fd2ab12571_r.jpg)
-</br>
+
  **景点收藏夹**
+ </br>
 ![示例图片](https://pic3.zhimg.com/100/v2-6441f3fd46bb8cedb0237c78eec39e36_r.jpg)
 
 
